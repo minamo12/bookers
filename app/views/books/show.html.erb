@@ -1,4 +1,8 @@
-<p>Book was successfully created.</p>
+<% if flash[:notice] %>
+  <p id="notice">
+    <%= flash[:notice] %>
+  </p>
+<% end %>
 
 <strong>タイトル</strong>
 <p><%= @book.title %></p>
