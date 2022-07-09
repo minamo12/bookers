@@ -1,14 +1,24 @@
+
 <% if flash[:notice] %>
-  <p id="notice">
-    <%= flash[:notice] %>
-  </p>
+   <p class="notice">
+      Book was <%= flash[:notice] %> created.
+   </p>
 <% end %>
 
-<strong>タイトル</strong>
-<p><%= @book.title %></p>
 
-<strong>本文</strong>
-<p><%= @book.body %></p>
+<div class="text">
+  <p>
+    <strong>Title:</strong>
+     <%= @book.title %>
+  </p>
 
-<%= link_to "Edit", edit_path(@book.id) %>
-<%= link_to "Back", index_path %>
+  <p>
+     <strong>Body:</strong>
+    <%= @book.body %>
+  </p>
+</div>
+
+<div>
+  <%= link_to "Edit", edit_book_path(@book.id) %> |
+  <%= link_to "Back", books_path %>
+</div>
